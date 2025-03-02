@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/textView_producto"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:text="@string/textView_titulo"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_g"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginEnd="56dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editText_producto"
+        app:layout_constraintEnd_toStartOf="@+id/button_guardar"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/textView_producto" />
+
+    <EditText
+        android:id="@+id/editText_producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/button_guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="49dp"
+        android:text="@string/button_guardar"
+        app:layout_constraintStart_toStartOf="@+id/editText_producto"
+        app:layout_constraintTop_toBottomOf="@+id/editText_producto" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/textView_listado"
+        app:layout_constraintEnd_toStartOf="@+id/editText_listado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText_listado" />
+
+    <EditText
+        android:id="@+id/editText_listado"
+        android:layout_width="0dp"
+        android:layout_height="332dp"
+        android:layout_marginTop="101dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="103dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/button_guardar" />
+
+    <Button
+        android:id="@+id/button_verListado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/button_verListado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_listado" />
+
+    <Button
+        android:id="@+id/button_borrarListado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="17dp"
+        android:text="@string/button_borrarListado"
+        app:layout_constraintEnd_toEndOf="@+id/editText_listado"
+        app:layout_constraintTop_toBottomOf="@+id/editText_listado" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
