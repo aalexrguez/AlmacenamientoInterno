@@ -69,6 +69,22 @@ public class MainActivity extends AppCompatActivity {
                 actualizarListado();
 
             }
+        }); //botton de guardar
+
+        button_borrarListado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //borrar productos
+                try {
+                    fileOutputStream = openFileOutput("productos",Context.MODE_PRIVATE);
+                    fileOutputStream.close();
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                actualizarListado();
+            }
         });
     }
 
