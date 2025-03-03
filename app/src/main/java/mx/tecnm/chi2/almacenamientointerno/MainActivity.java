@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
     EditText editText_producto;
@@ -55,11 +56,40 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     fileOutputStream = openFileOutput("productos",
                             Context.MODE_APPEND);
+                    //guardar el producto
+                    fileOutputStream.write(producto.getBytes());
+                    //cerrar archivo
+                    fileOutputStream.close();
                 } catch (FileNotFoundException e) {
                     throw new RuntimeException(e);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
                 }
+                editText_producto.setText("");
+                actualizarListado();
 
             }
         });
     }
+
+    public void actualizarListado(){
+        //abrir archivo
+        try {
+            fileInputStream = openFileInput("productos");
+            StringBuffer stringBuffer = new StringBuffer();
+            int i;
+            while((i = fileInputStream.read()) != -1){
+                stringBuffer.append((char) i);
+            }
+            fileInputStream.close();
+
+            //mostrar productos
+            editText_listado.setText(stringBuffer.toString());
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
