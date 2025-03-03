@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         button_verListado = findViewById(R.id.button_verListado);
         button_borrarListado = findViewById(R.id.button_borrarListado);
 
+        //mostrar
+        actualizarListado();
+
         //Configuracion del boton guardar
         button_guardar.setOnClickListener(new View.OnClickListener() {
             @Override
