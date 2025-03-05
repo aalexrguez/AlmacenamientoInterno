@@ -89,6 +89,16 @@ public class MainActivity extends AppCompatActivity {
                 actualizarListado();
             }
         });
+
+        button_verListado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //abrir actividad "VerListado"
+                Intent ver_listado;
+                ver_listado = new Intent(MainActivity.this,VerListado.class);
+                startActivity(ver_listado);
+            }
+        });
     }
 
     public void actualizarListado(){
